@@ -12,5 +12,6 @@ jobs:
     - uses: MinaFoundation/install-minimina-action@v1
       with:
         stream: 'stable' # or 'unstable'
-
 ```
+
+See [examples.yml](/.github/workflows/examples.yml) workflow for more details.

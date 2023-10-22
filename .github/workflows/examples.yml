@@ -12,12 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get MiniMina
+      - name: 🤌 Get MiniMina
         uses: piotr-iohk/install-minimina-action@v1
 
-      - name: Default network
+      - name: 👌 Default network
         run: |
           minimina network create
           minimina network start
           minimina network stop
           minimina network delete
+
+      - name: 📥 Checkout
+        uses: actions/checkout@v4 # Checking-out repository only to get access to topology files
+
+      - name: 👍 Network from topology
+        run: |
+          minimina network create -n small -t tests/data/small_network/topology.json -g tests/data/small_network/genesis_ledger.json
+          minimina network start -n small
+          minimina network stop -n small
+          minimina network delete -n small
