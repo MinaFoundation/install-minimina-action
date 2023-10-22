@@ -1,0 +1,17 @@
+name: 'Install Minimina'
+description: 'Installs the minimina package from a specified stream.'
+inputs:
+  stream:
+    description: 'Stream for the package - can be stable or unstable.'
+    required: true
+    default: 'stable'
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        echo "deb [trusted=yes] http://packages.o1test.net ubuntu ${{ inputs.stream }}" | sudo tee /etc/apt/sources.list.d/mina.list
+        sudo apt-get update
+        sudo apt-get install -y minimina
+        mkdir -p minimina_home
+        echo "MINIMINA_HOME=$(pwd)/minimina_home" >> $GITHUB_ENV
+      shell: bash
