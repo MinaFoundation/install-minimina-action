@@ -1,0 +1,23 @@
+name: Examples
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get MiniMina
+        uses: piotr-iohk/install-minimina-action@v1
+
+      - name: Default network
+        run: |
+          minimina network create
+          minimina network start
+          minimina network stop
+          minimina network delete
