@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: 🤌 Get MiniMina
-        uses: piotr-iohk/install-minimina-action@v1
+        uses: MinaFoundation/install-minimina-action@v1
 
       - name: 👌 Default network
         run: |
