@@ -1,4 +1,4 @@
-# `install-minimina-action`
+# install-minimina-action
 
 This GitHub action facilitates the installation of [Minimina](https://github.com/MinaFoundation/minimina) within your GitHub workflow. Upon successful execution, Minimina files are stored at `$MINIMINA_HOME\.minimina`.
 
@@ -14,7 +14,8 @@ jobs:
     steps:
     - uses: MinaFoundation/install-minimina-action@v1
       with:
-        stream: 'stable'  # Options: 'stable' or 'unstable'; if param ommited it will install 'stable'
+        stream: 'stable'  # Options: 'stable' or 'unstable';
+                          # Defaults to 'stable' if omitted.
 ```
 
 ### 2. Building from a Specific Commit or Branch
