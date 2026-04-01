@@ -1,3 +1,6 @@
+> ⚠️ **This repository is no longer maintained.**
+> Please refer to the actively maintained version at [https://github.com/o1-labs/install-minimina-action](https://github.com/o1-labs/install-minimina-action).
+
 # install-minimina-action
 
 This GitHub action facilitates the installation of [Minimina](https://github.com/MinaFoundation/minimina) within your GitHub workflow. Upon successful execution, Minimina files are stored at `$MINIMINA_HOME\.minimina`.
